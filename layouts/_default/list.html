@@ -1,4 +1,7 @@
 {{ define "main" }}
+ {{ if .Params.fixed }}
+<div class="contentbody">{{ .Content }}</div>
+{{ else }}
 <main class="main list" role="main">
 	{{- with .Title }}
 	<header class="main__header">
@@ -15,4 +18,5 @@
 	{{- end }}
 </main>
 {{ partial "pagination.html" . }}
+{{ end }}
 {{ end }}
